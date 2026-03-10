@@ -38,9 +38,8 @@ const feedback = document.getElementById("feedback");
 // ==============================
 
 button.addEventListener("click", function () {
-
   // STEP 4: Random XP reward
-const earnedXP = xpRewards[Math.floor(Math.random() * xpRewards.length)];
+  const earnedXP = xpRewards[Math.floor(Math.random() * xpRewards.length)];
 
   xpTotal += earnedXP;
   xpDisplay.textContent = xpTotal;
@@ -48,7 +47,11 @@ const earnedXP = xpRewards[Math.floor(Math.random() * xpRewards.length)];
   // STEP 5: CONDITIONAL LOGIC (YOU WRITE THIS)
   // Requirements:
   // - At least 3 user states
+  //  [low, medium, high]
   // - Use comparisons
+  //    if xp > 100: high
+  //    elif xp > 50: medium
+  //    else: low
   // - Feedback must change based on progress
 
   // TODO:
@@ -56,6 +59,13 @@ const earnedXP = xpRewards[Math.floor(Math.random() * xpRewards.length)];
   // else if (...)
   // else (...)
 
+  if (xpTotal > 100) {
+    feedback.textContent = "You're a language master! Keep it up!";
+  } else if (xpTotal > 50) {
+    feedback.textContent = "Great job! You're making solid progress!";
+  } else {
+    feedback.textContent = "Good start! Keep going to earn more XP!";
+  }
 });
 
 /*
