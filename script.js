@@ -59,9 +59,9 @@ button.addEventListener("click", function () {
   // else if (...)
   // else (...)
 
-  if (xpTotal > 100) {
+  if (xpTotal >= 100) {
     feedback.textContent = "You're a language master! Keep it up!";
-  } else if (xpTotal > 50) {
+  } else if (xpTotal >= 50) {
     feedback.textContent = "Great job! You're making solid progress!";
   } else {
     feedback.textContent = "Good start! Keep going to earn more XP!";
